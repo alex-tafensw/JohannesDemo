@@ -121,7 +121,7 @@ const signIn = (email, password) => {
 
 // function to get data
 const readData = async () => {
-  const querySnapshot = await getDocs( collection(FBdb, "MOVIE") )
+  const querySnapshot = await getDocs( collection(FBdb, "movie") )
   let listdata = []
   querySnapshot.forEach( (doc) => {
     let item = doc.data()
@@ -135,7 +135,7 @@ const readData = async () => {
 
   // function to get a single item
   const getDocument = async ( itemId) => {
-    const docRef = doc( FBdb, "MOVIE", itemId )
+    const docRef = doc( FBdb, "movie", itemId )
     const docSnap = await getDoc( docRef )
     let movie = docSnap.data()
     movie.id = itemId
